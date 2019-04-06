@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #F51167;
+}
+
+body {
+    margin: 0;
+    font-family: 'Josefin sans', sans-serif;
+}
+
+html {
+    font-size: 1em;
+}
+
+
+/* Animations */
+
+@keyframes gradualAppearance {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes rotation {
+    from {transform: rotateZ(180deg)}
+    to {transform: rotateZ(0deg)}
+}
+
+@keyframes changeBackground {
+    from {background-image: url('../images/header-1.jpg');}
+    to {background-image: url('../images/header-2.jpg');}
+}
