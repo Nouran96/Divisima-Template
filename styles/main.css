@@ -20,7 +20,7 @@ html {
 
 /* Search Header Properties */
 
-#searchHeader {margin: .9rem 0;}
+#searchHeader {margin: .9rem 0 0;}
 
 #searchHeader div {margin: 0 .5rem 1rem;}
 
@@ -73,7 +73,101 @@ html {
     top: -38%;
 }
 
+/* Main Nav Properties */
+
+nav {
+    background-color: #282828;
+}
+
+nav #menu {
+    /* display: flex;
+    justify-content: flex-end; */
+}
+nav #menu .menuIcon {
+    background-color: #555;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: .6rem .7rem;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 1rem 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0 0 1rem 0;
+}
+
+nav ul li {
+    font-family: 'Josefin Sans', sans-serif;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    padding: .5rem;
+}
+
+nav ul li:hover {
+
+}
+
+nav ul li:hover > a {
+    text-decoration: none;
+    color: #333;
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+nav > ul > li {padding: 0 1.5rem;}
+/* nav > ul > li:first-of-type {padding: 0 1.5rem 0 0;} */
+
+nav ul li > ul { /* Nested list */
+    /* position: absolute; */
+    flex-direction: column;
+    z-index: 2;
+    /* background-color: white; */
+    /* width: 13rem; */
+    /* top: 100%; */
+    padding: 1.2rem 1rem;
+    /* display: none; */
+}
+
+nav ul li:hover > ul {display: block;}
+
+nav ul li > ul li a {
+    /* color: #333; */
+    /* color: white;
+    width: 100%;
+    padding: .5rem; */
+}
+
+nav ul li.new::before {
+    content: 'NEW';
+    position: absolute;
+    color: white;
+    font-size: .6em;
+    font-weight: bold;
+    z-index: 2;
+    background-color: var(--main-color);
+    padding: .3rem .4rem;
+    border-radius: 10px;
+    top: 20%;
+    left: 32%;
+}
+
 /* Media Queries */
+
+/* Minor Breakpoint */
+@media (min-width: 390px) {
+    nav ul li.new::before {
+        left: 25%;
+    }
+}
 
  /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
@@ -82,12 +176,23 @@ html {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
-
+    nav > ul > li:first-of-type {padding: 0 1.5rem 0 0;}
+    nav ul li.new::before {
+        top: -35%;
+        left: 35%;
+    }
+    nav ul {padding: 0}
+    nav ul li:hover a {color: var(--main-color)}
+    nav ul li:hover {
+        background-color: transparent;
+        border-radius: 0
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
     #searchHeader div {margin: 0}
+    #searchHeader {margin: 0.9rem 0px 2rem;}
     #searchHeader .links {width: 35%}
     #searchHeader .link a {
         margin: 0;
@@ -100,7 +205,7 @@ html {
 @media (min-width: 1200px) {
     #searchHeader .links {width: 30%}
     #searchHeader .searchBar {width: 45%;}
- }
+}
 
 /* Animations */
 
