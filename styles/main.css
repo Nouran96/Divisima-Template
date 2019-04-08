@@ -11,14 +11,14 @@ html {
     font-size: 1em;
 }
 
-/* Main Classes */
+/**** Main Classes ****/
 .pink-bg {background-color: var(--main-color);}
 
 .grey-bg {background-color: #eee}
 
 .white-text {color: white;}
 
-/* Search Header Properties */
+/**** Search Header Properties ****/
 #searchHeader {margin: .9rem 0 0;}
 
 #searchHeader div {margin: 0 .5rem 1rem;}
@@ -72,7 +72,7 @@ html {
     top: -38%;
 }
 
-/* Main Nav Properties */
+/**** Main Nav Properties ****/
 nav {background-color: #282828;}
 
 nav #menu .menuIcon {
@@ -136,7 +136,7 @@ nav ul li.new::before {
     left: 32%;
 }
 
-/* Header Properties */
+/**** Header Properties ****/
 header .content,
 .banner .text {
     text-transform: uppercase;
@@ -256,7 +256,31 @@ header .content .offerCard span:last-of-type {
     margin: 0 1.2rem;
 }
 
-/* Media Queries */
+/**** Qualities Section Properties ****/
+.qualities {
+    display: flex;
+}
+
+.qualities > div {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.qualities div img {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.qualities div span {
+    text-transform: uppercase;
+    margin-left: .3rem;
+    padding-left: 1rem;
+}
+
+/**** Media Queries ****/
 
 /* Minor Breakpoint */
 @media (min-width: 390px) {
@@ -266,7 +290,13 @@ header .content .offerCard span:last-of-type {
 }
 
 @media (min-width: 490px) {
+    /**** Header ****/
     header .content .text h2 {font-size: 3em;}
+
+    /**** Qualities ****/
+    .qualities > div {font-size: 1.5em}
+    .qualities > div div:first-of-type {width: 20%}
+    .qualities div span {padding-left: .5rem}
 }
 
  /* Small devices (landscape phones, 576px and up) */
@@ -276,7 +306,7 @@ header .content .offerCard span:last-of-type {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
-    /* Nav Bar */
+    /**** Nav Bar ****/
     nav > ul > li:first-of-type {padding: 0 1.5rem 0 0;}
     nav ul li.new::before {
         top: -35%;
@@ -288,11 +318,17 @@ header .content .offerCard span:last-of-type {
         background-color: transparent;
         border-radius: 0
     }
+
+    /**** Qualities ****/
+    .qualities > div {
+        width: calc(100%/3);
+        font-size: 1em;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-    /* Search Header */
+    /**** Search Header ****/
     #searchHeader div {margin: 0}
     #searchHeader {margin: 0.9rem 0px 2rem;}
     #searchHeader .links {width: 35%}
@@ -302,7 +338,7 @@ header .content .offerCard span:last-of-type {
     }
     #searchHeader .searchBar {width: 39%;}
 
-    /* Header */
+    /**** Header ****/
     header .content .text {width: 50%}
     header .content .offerCard {top: 35%}
 }
@@ -313,7 +349,7 @@ header .content .offerCard span:last-of-type {
     #searchHeader .searchBar {width: 45%;}
 }
 
-/* Animations */
+/**** Animations ****/
 
 @keyframes gradualAppearance {
     from {opacity: 0}
