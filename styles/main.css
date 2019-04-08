@@ -19,7 +19,6 @@ html {
 .white-text {color: white;}
 
 /* Search Header Properties */
-
 #searchHeader {margin: .9rem 0 0;}
 
 #searchHeader div {margin: 0 .5rem 1rem;}
@@ -74,15 +73,8 @@ html {
 }
 
 /* Main Nav Properties */
+nav {background-color: #282828;}
 
-nav {
-    background-color: #282828;
-}
-
-nav #menu {
-    /* display: flex;
-    justify-content: flex-end; */
-}
 nav #menu .menuIcon {
     background-color: #555;
     color: white;
@@ -97,6 +89,7 @@ nav #menu .menuIcon {
 nav ul {
     list-style: none;
     padding: 0 0 1rem 0;
+    margin-bottom: 0;
 }
 
 nav ul li {
@@ -112,10 +105,6 @@ nav ul li a {
     padding: .5rem;
 }
 
-nav ul li:hover {
-
-}
-
 nav ul li:hover > a {
     text-decoration: none;
     color: #333;
@@ -124,27 +113,14 @@ nav ul li:hover > a {
 }
 
 nav > ul > li {padding: 0 1.5rem;}
-/* nav > ul > li:first-of-type {padding: 0 1.5rem 0 0;} */
 
 nav ul li > ul { /* Nested list */
-    /* position: absolute; */
     flex-direction: column;
     z-index: 2;
-    /* background-color: white; */
-    /* width: 13rem; */
-    /* top: 100%; */
     padding: 1.2rem 1rem;
-    /* display: none; */
 }
 
 nav ul li:hover > ul {display: block;}
-
-nav ul li > ul li a {
-    /* color: #333; */
-    /* color: white;
-    width: 100%;
-    padding: .5rem; */
-}
 
 nav ul li.new::before {
     content: 'NEW';
@@ -160,6 +136,121 @@ nav ul li.new::before {
     left: 32%;
 }
 
+/* Header Properties */
+header .content,
+.banner .text {
+    text-transform: uppercase;
+    position: relative;
+    transition: all 2s ease-in;
+}
+
+header .content {
+    width: 100%;
+    height: 720px;
+    padding-top: 10rem;
+    position: relative;
+    transition: all .2s ease-in-out;
+    background-image: url('../images/header-1.jpg');
+    background-position: center;
+}
+
+/* Solution to change background in firefox */
+header .content::after { 
+    content: '';
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 720px;
+    background-image: url('../images/header-2.jpg');
+    background-position: center;
+    animation: gradualAppearance 4s ease-in-out infinite alternate;
+}
+
+header .content .text,
+header .content .offerCard {z-index: 2}
+
+header .content h4,
+.banner .text h4 {
+    font-size: 1em;
+    margin: 1rem 0;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+header .content h4 {animation: gradualAppearance .4s ease-in both;}
+
+header .content .text h2,
+.banner .text h2 {
+    margin: 1rem 0;
+    animation: gradualAppearance .4s ease-in .4s both;
+    font-weight: bold;
+}
+
+header .content .text h2 {font-size: 2.1em;}
+
+header .content .text p {
+    color: #ddd;
+    text-transform: none;
+    line-height: 30px;
+    font-size: 1.1em;
+    animation: gradualAppearance .4s ease-in .8s both;
+}
+
+header .content .buttons {
+    margin-top: 2rem;
+    animation: gradualAppearance .4s ease-in 1.2s both;
+}
+
+header .content .buttons button,
+.top-selling .loadMore,
+.banner .text .shopNow {
+    border-radius: 30px;
+    outline: none;
+    padding: .8rem 2.2rem;
+    font-size: .9em;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header .content .buttons button {border: 1px solid white;}
+
+header .content .buttons .discover,
+.top-selling .loadMore {
+    margin-right: .5rem;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+header .content .offerCard {
+    position: absolute;
+    left: 78%;
+    top: 7%;
+    padding: 1rem 1.7rem;
+    text-align: center;
+    border-radius: 50%;
+    animation: gradualAppearance .4s ease-in 1.6s both,
+                rotation .4s ease-in 1.6s both;
+}
+
+header .content .offerCard span:first-of-type {
+    text-transform: lowercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1.3em;
+}
+
+header .content .offerCard h2 {
+    font-size: 3.7em;
+    margin: .7rem 0;
+}
+
+header .content .offerCard span:last-of-type {
+    font-size: .8em;
+    margin: 0 1.2rem;
+}
+
 /* Media Queries */
 
 /* Minor Breakpoint */
@@ -169,6 +260,10 @@ nav ul li.new::before {
     }
 }
 
+@media (min-width: 490px) {
+    header .content .text h2 {font-size: 3em;}
+}
+
  /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
 
@@ -176,6 +271,7 @@ nav ul li.new::before {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
+    /* Nav Bar */
     nav > ul > li:first-of-type {padding: 0 1.5rem 0 0;}
     nav ul li.new::before {
         top: -35%;
@@ -191,6 +287,7 @@ nav ul li.new::before {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
+    /* Search Header */
     #searchHeader div {margin: 0}
     #searchHeader {margin: 0.9rem 0px 2rem;}
     #searchHeader .links {width: 35%}
@@ -199,6 +296,10 @@ nav ul li.new::before {
         font-size: .9em;
     }
     #searchHeader .searchBar {width: 39%;}
+
+    /* Header */
+    header .content .text{width: 50%}
+    header .content .offerCard {top: 35%}
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -217,9 +318,4 @@ nav ul li.new::before {
 @keyframes rotation {
     from {transform: rotateZ(180deg)}
     to {transform: rotateZ(0deg)}
-}
-
-@keyframes changeBackground {
-    from {background-image: url('../images/header-1.jpg');}
-    to {background-image: url('../images/header-2.jpg');}
 }
