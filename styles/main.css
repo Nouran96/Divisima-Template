@@ -161,13 +161,18 @@ header .content::after {
     position: absolute;
     width: 100%;
     height: 720px;
+    z-index: 1;
     background-image: url('../images/header-2.jpg');
     background-position: center;
     animation: gradualAppearance 4s ease-in-out infinite alternate;
 }
 
+header .content .text {position: relative;}
+
 header .content .text,
-header .content .offerCard {z-index: 2}
+header .content .offerCard {
+    z-index: 2;
+}
 
 header .content h4,
 .banner .text h4 {
@@ -298,7 +303,7 @@ header .content .offerCard span:last-of-type {
     #searchHeader .searchBar {width: 39%;}
 
     /* Header */
-    header .content .text{width: 50%}
+    header .content .text {width: 50%}
     header .content .offerCard {top: 35%}
 }
 
