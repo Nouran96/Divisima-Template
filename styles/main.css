@@ -116,11 +116,9 @@ nav > ul > li {padding: 0 1.5rem;}
 
 nav ul li > ul { /* Nested list */
     flex-direction: column;
-    z-index: 2;
+    z-index: 3;
     padding: 1.2rem 1rem;
 }
-
-nav ul li:hover > ul {display: block;}
 
 nav ul li.new::before {
     content: 'NEW';
@@ -128,7 +126,7 @@ nav ul li.new::before {
     color: white;
     font-size: .6em;
     font-weight: bold;
-    z-index: 2;
+    z-index: 3;
     background-color: var(--main-color);
     padding: .3rem .4rem;
     border-radius: 10px;
@@ -313,11 +311,19 @@ header .content .offerCard span:last-of-type {
         left: 35%;
     }
     nav ul {padding: 0}
-    nav ul li:hover a {color: var(--main-color)}
-    nav ul li:hover {
+    nav ul li:hover > a {
+        color: var(--main-color);
         background-color: transparent;
-        border-radius: 0
     }
+    nav ul li:hover > ul {
+        position: absolute;
+        background-color: white;
+        width: 13rem;
+        top: 100%;
+        padding: 1.2rem 1rem;
+    }
+
+    nav ul li > ul li a {color: #333;}
 
     /**** Qualities ****/
     .qualities > div {

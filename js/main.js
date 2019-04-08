@@ -5,31 +5,62 @@ $(document).ready(function(){
         items: 4,
         autoplay: true
     });
-});
+    
+    var owl = $('.owl-carousel');
 
-var owl = $('.owl-carousel');
+    $('.owl-prev').click(function(){
+        owl.trigger('prev.owl.carousel');
+    });
 
-$('.owl-prev').click(function(){
-    owl.trigger('prev.owl.carousel');
-});
+    $('.owl-next').click(function(){
+        owl.trigger('next.owl.carousel');
+    });
 
-$('.owl-next').click(function(){
-    owl.trigger('next.owl.carousel');
-});
+    $('#menu').click(() => showElement($('#main-nav')));
 
-// Main Functions
+    // Only use the click events in small and extra small screens
+    $('#shoes').click(() => {
+        if($(window).width() <= 768) {
+            showElement($('#shoes > ul'));
+        }
+        else
+            return;
+    });
 
-/* Function to control nav bar visibility */
-$('#menu').click(() => showElement($('#main-nav')));
+    $('#pages').click(() => {
+        if($(window).width() <= 768) {
+            showElement($('#pages > ul'));
+        }
+        else
+            return;
+    });
 
-$('#shoes').click(() => showElement($('#shoes > ul')));
-$('#pages').click(() => showElement($('#pages > ul')));
+    // Only use the hover event in screens larger than medium
+    $('#shoes').hover(() => {
+        if($(window).width() > 768) {
+            showElement($('#shoes > ul'));
+        }
+        else
+            return;
+    });
 
-function showElement(el) {
-    if(el.hasClass('d-none')){
-        el.removeClass('d-none');
+    $('#pages').hover(() => {
+        if($(window).width() > 768) {
+            showElement($('#pages > ul'));
+        }
+        else
+            return;
+    });
+
+    // Main Functions
+
+    /* Function to control elements visibility */
+    function showElement(el) {
+        if(el.hasClass('d-none')){
+            el.removeClass('d-none');
+        }
+        else {
+            el.addClass('d-none');
+        }
     }
-    else {
-        el.addClass('d-none');
-    }
-}
+});
