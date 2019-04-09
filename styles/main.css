@@ -383,6 +383,35 @@ header .content .offerCard span:last-of-type {
     padding: .8rem 2.2rem;
 }
 
+/**** Banner Section Properties ****/
+.banner .text {
+    background-image: url('../images/banner.jpg');
+    background-size: cover;
+    background-position: top;
+    margin: 0px 0 4rem;
+    padding: 5rem 2rem 3rem;
+    position: relative;
+}
+
+.banner .text h2 {font-size: 3em;}
+
+.banner .text .shopNow {
+    border: transparent;
+    padding: .8rem 3.5rem;
+}
+
+.banner span.new {
+    position: absolute;
+    background-color: #50E550;
+    padding: 0.3rem 1rem 0;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3em;
+    top: 12%;
+    left: 10%;
+}
+
 
 /**** Media Queries ****/
 
@@ -412,7 +441,16 @@ header .content .offerCard span:last-of-type {
 
     .latest .owl-prev {left: 40%;}
 
+    /**** Top Selling Products ****/
     .products .like, .products .cart {top: 85%}
+
+    /****  Banner ****/
+    .banner span.new {
+        top: 8%;
+        left: 74%;
+    }
+
+    .banner .text {padding: 2.5rem;}
 }
 
  /* Small devices (landscape phones, 576px and up) */
@@ -420,6 +458,14 @@ header .content .offerCard span:last-of-type {
     /**** Top Selling Products ****/
     .top-selling .products figure {width: calc(50% - 2rem)}
     .products .like, .products .cart {top: 76%}
+
+    /****  Banner ****/
+    .banner span.new {
+        top: 12%;
+        left: 6%;
+    }
+
+    .banner .text {padding: 5rem 2rem 3rem;}
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -455,6 +501,14 @@ header .content .offerCard span:last-of-type {
 
     /**** Latest Products ****/
     .latest .owl-prev {left: 43%;}
+
+    /****  Banner ****/
+    .banner span.new {
+        top: 8%;
+        left: 83%;
+    }
+
+    .banner .text {padding: 2.5rem;}
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -476,6 +530,9 @@ header .content .offerCard span:last-of-type {
     /**** Top Selling Products ****/
     .top-selling .products figure {width: calc(25% - 2rem)}
     .products .like, .products .cart {top: 68%}
+
+    /****  Banner ****/
+    .banner span.new {left: 89%;}
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
