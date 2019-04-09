@@ -1,9 +1,24 @@
 // Carousel functions
 $(document).ready(function(){
+    // Owl Carousel Options
     $('.owl-carousel').owlCarousel({
         loop: true,
-        items: 4,
-        autoplay: true
+        autoplay: true,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            490: {
+                items: 2
+            },
+            768: {
+                items: 3
+            },
+            1200: {
+                items: 4
+            }
+        }
     });
     
     var owl = $('.owl-carousel');

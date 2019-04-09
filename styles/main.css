@@ -278,6 +278,77 @@ header .content .offerCard span:last-of-type {
     padding-left: 1rem;
 }
 
+/**** Latest Products Section Properties ****/
+.latest .container {position: relative}
+
+.latest .owl-prev,
+.latest .owl-next {
+    color: #777;
+    border: 3px solid #777;
+    padding: .5rem .7rem;
+    border-radius: 50%;
+    position: absolute; 
+    top: 100%;
+    cursor: pointer;
+}
+
+.latest .owl-prev {left: 35%;}
+.latest .owl-next {left: 50%;}
+
+.latest h2,
+.top-selling h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.7em;
+    margin: 4rem auto;
+    font-weight: bold;
+}
+
+.latest figure,
+.products figure {margin: 1rem;}
+
+.latest figure img,
+.products figure img {max-width: 100%;}
+
+.like, .cart {
+    cursor: pointer;
+    border-radius: 20px;
+    position: absolute;
+    top: 76%;
+}
+
+.like {
+    left: 76%;
+    padding: .7rem;
+}
+
+.cart {
+    right: 26%;
+    padding: .5rem .6rem;
+}
+
+.cart span {
+    opacity: 0;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+    display: inline-block;
+    transition: all .2s ease-in, opacity .2s ease-in .2s;
+    font-size: .7em;
+    text-transform: uppercase;
+}
+
+.cart:hover > span {
+    opacity: 1;
+    height: 1em;
+    width: 7em;
+}
+
+.latest figure .details {margin-top: 1.5rem}
+
+.latest figure .price,
+.products figure .price {font-weight: bold;}
+
 /**** Media Queries ****/
 
 /* Minor Breakpoint */
@@ -295,6 +366,12 @@ header .content .offerCard span:last-of-type {
     .qualities > div {font-size: 1.5em}
     .qualities > div div:first-of-type {width: 20%}
     .qualities div span {padding-left: .5rem}
+
+    /****  Latest Products ****/
+    .latest h2,
+    .top-selling h2 {font-size: 2.1em}
+
+    .latest .owl-prev {left: 40%;}
 }
 
  /* Small devices (landscape phones, 576px and up) */
@@ -332,6 +409,9 @@ header .content .offerCard span:last-of-type {
         width: calc(100%/3);
         font-size: 1em;
     }
+
+    /**** Latest Products ****/
+    .latest .owl-prev {left: 43%;}
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -355,6 +435,15 @@ header .content .offerCard span:last-of-type {
 @media (min-width: 1200px) {
     #searchHeader .links {width: 30%}
     #searchHeader .searchBar {width: 45%;}
+}
+
+@media (min-width: 1350px) {
+    /****  Latest Products ****/
+    .latest .owl-prev,
+    .latest .owl-next {top: 54%;}
+
+    .latest .owl-prev {left: -4%;}
+    .latest .owl-next {left: 101%}
 }
 
 /**** Animations ****/
