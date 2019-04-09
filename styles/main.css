@@ -412,6 +412,150 @@ header .content .offerCard span:last-of-type {
     left: 10%;
 }
 
+/**** Footer Properties ****/
+footer {
+    background-color: #282828;
+    color: #888;
+    padding: 4rem 0;
+}
+
+footer .logo {margin-bottom: 2rem;}
+
+footer .content {
+    font-size: .9em;
+    margin-bottom: 3rem;
+}
+
+footer .content > div {
+    margin: 0.5rem;
+    width: calc(100% - 1rem);
+}
+
+footer .content > div h3 {
+    text-transform: uppercase;
+    margin: 3rem auto;
+    color: white;
+    font-size: 1.2em;
+}
+
+footer .content .about p {
+    line-height: 25px;
+    margin-bottom: 3rem;
+}
+
+footer .content .links ul {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+}
+
+footer .content .links ul li {position: relative}
+
+footer .content .links ul li span {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border: 1px solid #F51167;
+    border-radius: 50%;
+    position: absolute;
+    top: 29%;
+    transition: all .2s ease-in;
+}
+
+footer .content .links ul li a {
+    color: #888;
+    text-decoration: none;
+    display: block;
+    margin: 0 1.2rem 0.5rem;
+}
+
+footer .content .links ul li:hover > a {color: white;}
+footer .content .links ul li:hover > span {
+    width: 7px;
+    height: 7px;
+    background-color: #F51167;
+}
+
+footer .content .questions .question .text {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+footer .content .questions .question .text h4 {
+    margin: 0;
+    color: #3a3737;
+    text-transform: uppercase;
+    font-size: .95em;
+}
+
+footer .content .questions .question .text span {font-size: .8em;}
+footer .content .questions .question .text p {
+    font-size: .8em;
+    margin-top: .6rem;
+    color: #F51167;
+    cursor: pointer;
+}
+
+footer .content .contact div p {
+    margin-top: -0.3rem;
+    line-height: 25px;
+    margin-bottom: 1.5rem;
+}
+
+footer .content .contact div span{
+    color: #F51167;
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+footer .social {
+    border-top: 1px solid #444;
+}
+
+footer .social ul {
+    list-style: none;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    margin: 3rem .8rem;
+}
+
+footer .social ul li {cursor: pointer;}
+footer .social ul li:hover > a {color: white}
+
+footer .social ul li:hover > i.fa-instagram,
+footer .social ul li:hover > i.fa-facebook-f,
+footer .social ul li:hover > i.fa-tumblr-square {color: rgb(62, 62, 131)}
+
+footer .social ul li:hover > i.fa-pinterest,
+footer .social ul li:hover > i.fa-youtube {color: rgb(151, 14, 14)}
+
+footer .social ul li:hover > i.fa-twitter {color: rgb(20, 121, 155)}
+footer .social ul li:hover > i.fa-google-plus-g {color: rgb(173, 58, 58)}
+
+footer .social ul li i {
+    font-size: 1.3em;
+    color: #D7D7D7;
+    vertical-align: middle;
+    transition: all .2s ease-in;
+}
+
+footer .social ul li a {
+    text-decoration: none;
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: .7em;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 1rem;
+    margin-top: .5rem;
+    display: none;
+}
+
+footer .social p {
+    color: white;
+    font-size: .9em;
+    text-align: center;
+}
 
 /**** Media Queries ****/
 
@@ -451,6 +595,9 @@ header .content .offerCard span:last-of-type {
     }
 
     .banner .text {padding: 2.5rem;}
+
+    /**** Footer Properties ****/
+    footer .social ul li i {font-size: 1.7em;}
 }
 
  /* Small devices (landscape phones, 576px and up) */
@@ -466,6 +613,9 @@ header .content .offerCard span:last-of-type {
     }
 
     .banner .text {padding: 5rem 2rem 3rem;}
+
+    /**** Footer Properties ****/
+    footer .content > div {width: calc(50% - 1rem)}
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -533,6 +683,10 @@ header .content .offerCard span:last-of-type {
 
     /****  Banner ****/
     .banner span.new {left: 89%;}
+
+    /**** Footer Properties ****/
+    footer .content > div {width: calc(25% - 1rem)}
+    footer .social ul li a {display: block}
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
