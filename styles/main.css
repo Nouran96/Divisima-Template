@@ -300,12 +300,15 @@ header .content .offerCard span:last-of-type {
     text-align: center;
     text-transform: uppercase;
     font-size: 1.7em;
-    margin: 4rem auto;
+    margin: 6rem auto 4rem;
     font-weight: bold;
 }
 
 .latest figure,
-.products figure {margin: 1rem;}
+.products figure {
+    margin: 1rem;
+    position: relative;
+}
 
 .latest figure img,
 .products figure img {max-width: 100%;}
@@ -344,18 +347,54 @@ header .content .offerCard span:last-of-type {
     width: 7em;
 }
 
-.latest figure .details {margin-top: 1.5rem}
+.latest figure .details,
+.products figure .details {margin-top: 1.5rem}
 
 .latest figure .price,
 .products figure .price {font-weight: bold;}
+
+/**** Top Selling Section ****/
+.top-selling ul {
+    list-style: none;
+    padding: 0;
+}
+
+.top-selling ul li {margin: 1rem .2rem;}
+
+.top-selling ul li a {
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+    font-size: .8em;
+    font-weight: bold;
+    text-align: center;
+    background-color: #eee;
+    padding: 1rem 1.5rem;
+    border-radius: 30px;
+}
+
+.top-selling .products figure {width: 100%;}
+
+.top-selling .loadMore {
+    display: block;
+    border: 1px solid #333;
+    color: #333;
+    margin: 4rem auto;
+    padding: .8rem 2.2rem;
+}
+
 
 /**** Media Queries ****/
 
 /* Minor Breakpoint */
 @media (min-width: 390px) {
+    /**** Nav Bar ****/
     nav ul li.new::before {
         left: 25%;
     }
+
+    /**** Top Selling Products ****/
+    .products .like, .products .cart {top: 81%}
 }
 
 @media (min-width: 490px) {
@@ -372,11 +411,15 @@ header .content .offerCard span:last-of-type {
     .top-selling h2 {font-size: 2.1em}
 
     .latest .owl-prev {left: 40%;}
+
+    .products .like, .products .cart {top: 85%}
 }
 
  /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) { 
-
+@media (min-width: 576px) {
+    /**** Top Selling Products ****/
+    .top-selling .products figure {width: calc(50% - 2rem)}
+    .products .like, .products .cart {top: 76%}
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -429,12 +472,20 @@ header .content .offerCard span:last-of-type {
     /**** Header ****/
     header .content .text {width: 50%}
     header .content .offerCard {top: 35%}
+
+    /**** Top Selling Products ****/
+    .top-selling .products figure {width: calc(25% - 2rem)}
+    .products .like, .products .cart {top: 68%}
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+    /**** Search Header ****/
     #searchHeader .links {width: 30%}
     #searchHeader .searchBar {width: 45%;}
+
+    /**** Top Selling Products ****/
+    .products .like, .products .cart {top: 76%}
 }
 
 @media (min-width: 1350px) {
