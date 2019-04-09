@@ -115,7 +115,6 @@ nav ul li:hover > a {
 nav > ul > li {padding: 0 1.5rem;}
 
 nav ul li > ul { /* Nested list */
-    /* flex-direction: column; */
     z-index: 3;
     padding: 1.2rem 1rem;
 }
@@ -139,6 +138,8 @@ header .content,
 .banner .text {
     text-transform: uppercase;
     position: relative;
+    -webkit-transition: all 2s ease-in;
+    -o-transition: all 2s ease-in;
     transition: all 2s ease-in;
 }
 
@@ -147,6 +148,8 @@ header .content {
     height: 720px;
     padding-top: 10rem;
     position: relative;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
     background-image: url('../images/header-1.jpg');
     background-position: center;
@@ -162,7 +165,8 @@ header .content::after {
     z-index: 1;
     background-image: url('../images/header-2.jpg');
     background-position: center;
-    animation: gradualAppearance 4s ease-in-out infinite alternate;
+    -webkit-animation: gradualAppearance 4s ease-in-out infinite alternate;
+            animation: gradualAppearance 4s ease-in-out infinite alternate;
 }
 
 header .content .text {position: relative;}
@@ -180,12 +184,16 @@ header .content h4,
     font-weight: bold;
 }
 
-header .content h4 {animation: gradualAppearance .4s ease-in both;}
+header .content h4 {
+    -webkit-animation: gradualAppearance .4s ease-in both;
+            animation: gradualAppearance .4s ease-in both;
+}
 
 header .content .text h2,
 .banner .text h2 {
     margin: 1rem 0;
-    animation: gradualAppearance .4s ease-in .4s both;
+    -webkit-animation: gradualAppearance .4s ease-in .4s both;
+            animation: gradualAppearance .4s ease-in .4s both;
     font-weight: bold;
 }
 
@@ -196,12 +204,14 @@ header .content .text p {
     text-transform: none;
     line-height: 30px;
     font-size: 1.1em;
-    animation: gradualAppearance .4s ease-in .8s both;
+    -webkit-animation: gradualAppearance .4s ease-in .8s both;
+            animation: gradualAppearance .4s ease-in .8s both;
 }
 
 header .content .buttons {
     margin-top: 2rem;
-    animation: gradualAppearance .4s ease-in 1.2s both;
+    -webkit-animation: gradualAppearance .4s ease-in 1.2s both;
+            animation: gradualAppearance .4s ease-in 1.2s both;
 }
 
 header .content .buttons button,
@@ -233,7 +243,9 @@ header .content .offerCard {
     padding: 1rem 1.7rem;
     text-align: center;
     border-radius: 50%;
-    animation: gradualAppearance .4s ease-in 1.6s both,
+    -webkit-animation: gradualAppearance .4s ease-in 1.6s both,
+                rotation .4s ease-in 1.6s both;
+            animation: gradualAppearance .4s ease-in 1.6s both,
                 rotation .4s ease-in 1.6s both;
 }
 
@@ -255,10 +267,6 @@ header .content .offerCard span:last-of-type {
 }
 
 /**** Qualities Section Properties ****/
-.qualities {
-    display: flex;
-}
-
 .qualities > div {
     width: 100%;
     text-align: center;
@@ -336,6 +344,8 @@ header .content .offerCard span:last-of-type {
     height: 0;
     width: 0;
     display: inline-block;
+    -webkit-transition: all .2s ease-in, opacity .2s ease-in .2s;
+    -o-transition: all .2s ease-in, opacity .2s ease-in .2s;
     transition: all .2s ease-in, opacity .2s ease-in .2s;
     font-size: .7em;
     text-transform: uppercase;
@@ -459,6 +469,8 @@ footer .content .links ul li span {
     border-radius: 50%;
     position: absolute;
     top: 29%;
+    -webkit-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
     transition: all .2s ease-in;
 }
 
@@ -536,6 +548,8 @@ footer .social ul li i {
     font-size: 1.3em;
     color: #D7D7D7;
     vertical-align: middle;
+    -webkit-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
     transition: all .2s ease-in;
 }
 
@@ -710,12 +724,22 @@ footer .social p {
 
 /**** Animations ****/
 
+@-webkit-keyframes gradualAppearance {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
 @keyframes gradualAppearance {
     from {opacity: 0}
     to {opacity: 1}
 }
 
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotateZ(180deg);transform: rotateZ(180deg)}
+    to {-webkit-transform: rotateZ(0deg);transform: rotateZ(0deg)}
+}
+
 @keyframes rotation {
-    from {transform: rotateZ(180deg)}
-    to {transform: rotateZ(0deg)}
+    from {-webkit-transform: rotateZ(180deg);transform: rotateZ(180deg)}
+    to {-webkit-transform: rotateZ(0deg);transform: rotateZ(0deg)}
 }
