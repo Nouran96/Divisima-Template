@@ -16,6 +16,7 @@ $(document).ready(function(){
         owl.trigger('next.owl.carousel');
     });
 
+    // Show main nav bar on clicking of menu icon
     $('#menu').click(() => showElement($('#main-nav')));
 
     // Only use the click events in small and extra small screens
@@ -56,11 +57,6 @@ $(document).ready(function(){
 
     /* Function to control elements visibility */
     function showElement(el) {
-        if(el.hasClass('d-none')){
-            el.removeClass('d-none');
-        }
-        else {
-            el.addClass('d-none');
-        }
+        el.toggleClass('d-none');
     }
 });

@@ -115,7 +115,7 @@ nav ul li:hover > a {
 nav > ul > li {padding: 0 1.5rem;}
 
 nav ul li > ul { /* Nested list */
-    flex-direction: column;
+    /* flex-direction: column; */
     z-index: 3;
     padding: 1.2rem 1rem;
 }
@@ -315,7 +315,9 @@ header .content .offerCard span:last-of-type {
         color: var(--main-color);
         background-color: transparent;
     }
+    nav ul li > ul {display: none}
     nav ul li:hover > ul {
+        display: block;
         position: absolute;
         background-color: white;
         width: 13rem;
